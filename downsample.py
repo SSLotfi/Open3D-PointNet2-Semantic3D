@@ -18,7 +18,7 @@ def down_sample(
         print("Processing:", file_prefix)
 
     # Inputs
-    dense_pcd = open3d.io.read_point_cloud(dense_pcd_path)
+    dense_pcd = o3d.io.read_point_cloud(dense_pcd_path)
     try:
         dense_labels = load_labels(dense_label_path)
     except:
