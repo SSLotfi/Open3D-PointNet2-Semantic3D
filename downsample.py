@@ -3,7 +3,6 @@ import os
 import numpy as np
 from util.point_cloud_util import load_labels, write_labels
 from dataset.semantic_dataset import all_file_prefixes
-from open3d.geometry import voxel_down_sample,estimate_normals
 
 
 def down_sample(
@@ -47,7 +46,7 @@ def down_sample(
     min_bound = dense_pcd.get_min_bound() - voxel_size * 0.5
     max_bound = dense_pcd.get_max_bound() + voxel_size * 0.5
 
-    sparse_pcd, cubics_ids = voxel_down_sample(
+    sparse_pcd, cubics_ids = open3d.geometry.voxel_down_sample(
         dense_pcd, voxel_size, min_bound, max_bound, False
     )
     print("Num points after down sampling:", np.asarray(sparse_pcd.points).shape[0])
