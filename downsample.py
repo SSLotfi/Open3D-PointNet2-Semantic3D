@@ -46,7 +46,7 @@ def down_sample(
     min_bound = dense_pcd.get_min_bound() - voxel_size * 0.5
     max_bound = dense_pcd.get_max_bound() + voxel_size * 0.5
 
-    sparse_pcd, cubics_ids = o3d.geometry.voxel_down_sample(
+    sparse_pcd, cubics_ids = o3d.geometry.voxel_down_sample_and_trace(
         dense_pcd, voxel_size
     )
     print("Num points after down sampling:", np.asarray(sparse_pcd.points).shape[0])
