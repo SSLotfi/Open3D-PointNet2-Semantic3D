@@ -3,7 +3,7 @@ import os
 import numpy as np
 from util.point_cloud_util import load_labels, write_labels
 from dataset.semantic_dataset import all_file_prefixes
-from open3d.open3d.geometry import voxel_down_sample,estimate_normals
+from open3d.geometry import voxel_down_sample,estimate_normals
 
 
 def down_sample(
