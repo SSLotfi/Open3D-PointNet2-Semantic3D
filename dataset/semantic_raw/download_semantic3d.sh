@@ -6,7 +6,7 @@ if [ -z "$ans" ]; then
 	exit -1
 fi
 
-for i in `cat /content/Open3D-PointNet2-Semantic3D/dataset/semantic_raw/semantic3D_files.csv` 
+for i in `cat /content/Open3D-PointNet2-Semantic3D/dataset/semantic_raw/semantic3D_files_less.csv` 
 do
 	output_file=`basename $i`
 	echo Downloading ${output_file} ...
