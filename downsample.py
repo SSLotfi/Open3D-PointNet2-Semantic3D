@@ -1,4 +1,4 @@
-import open3d
+import open3d as o3d
 import os
 import numpy as np
 from util.point_cloud_util import load_labels, write_labels
@@ -30,13 +30,13 @@ def down_sample(
         non_zero_indexes = dense_labels != 0
 
         dense_points = np.asarray(dense_pcd.points)[non_zero_indexes]
-        dense_pcd.points = open3d.utility.Vector3dVector()
-        dense_pcd.points = open3d.utility.Vector3dVector(dense_points)
+        dense_pcd.points = o3d.utility.Vector3dVector()
+        dense_pcd.points = o3d.utility.Vector3dVector(dense_points)
         del dense_points
 
         dense_colors = np.asarray(dense_pcd.colors)[non_zero_indexes]
-        dense_pcd.colors = open3d.utility.Vector3dVector()
-        dense_pcd.colors = open3d.utility.Vector3dVector(dense_colors)
+        dense_pcd.colors = o3d.utility.Vector3dVector()
+        dense_pcd.colors = o3d.utility.Vector3dVector(dense_colors)
         del dense_colors
 
         dense_labels = dense_labels[non_zero_indexes]
@@ -46,12 +46,12 @@ def down_sample(
     min_bound = dense_pcd.get_min_bound() - voxel_size * 0.5
     max_bound = dense_pcd.get_max_bound() + voxel_size * 0.5
 
-    sparse_pcd, cubics_ids = open3d.geometry.voxel_down_sample(
+    sparse_pcd, cubics_ids = o3d.geometry.voxel_down_sample(
         dense_pcd, voxel_size, min_bound, max_bound, False
     )
     print("Num points after down sampling:", np.asarray(sparse_pcd.points).shape[0])
 
-    open3d.io.write_point_cloud(sparse_pcd_path, sparse_pcd)
+    o3d.io.write_point_cloud(sparse_pcd_path, sparse_pcd)
     print("Point cloud written to:", sparse_pcd_path)
 
     # Downsample labels
