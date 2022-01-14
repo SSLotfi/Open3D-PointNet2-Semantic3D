@@ -18,7 +18,7 @@ def down_sample(
         print("Processing:", file_prefix)
 
     # Inputs
-    dense_pcd = open3d.read_point_cloud(dense_pcd_path)
+    dense_pcd = open3d.io.read_point_cloud(dense_pcd_path)
     try:
         dense_labels = load_labels(dense_label_path)
     except:
@@ -51,7 +51,7 @@ def down_sample(
     )
     print("Num points after down sampling:", np.asarray(sparse_pcd.points).shape[0])
 
-    open3d.write_point_cloud(sparse_pcd_path, sparse_pcd)
+    open3d.io.write_point_cloud(sparse_pcd_path, sparse_pcd)
     print("Point cloud written to:", sparse_pcd_path)
 
     # Downsample labels
