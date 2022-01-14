@@ -8,8 +8,8 @@ set(open3d_install_prefix ${open3d_root}/open3d_install)
 # https://stackoverflow.com/q/17446981
 # https://git.io/fpFTE
 function(build_open3d)
-    configure_file(/content/Open3D-PointNet2-Semantic3D/tf_ops/open3d_builder.cmake
-                   /content/Open3D-PointNet2-Semantic3D/tf_ops/CMakeLists.txt
+    configure_file(${CMAKE_SOURCE_DIR}/open3d_builder.cmake
+                   ${open3d_root}/CMakeLists.txt
                    COPYONLY)
 
     execute_process(
