@@ -20,7 +20,7 @@ def prepend_line(file_name, line):
         f.write(line.rstrip("\r\n") + "\n" + content)
 
 
-def point_cloud_txt_to_pcd("/content/", file_prefix):
+def point_cloud_txt_to_pcd(raw_dir, file_prefix):
     # File names
     txt_file = os.path.join(raw_dir, file_prefix + ".txt")
     print("-------------------------------------------->", raw_dir)
@@ -61,7 +61,8 @@ if __name__ == "__main__":
     # raw data: "dataset/semantic_raw"
     current_dir = os.path.dirname(os.path.realpath(__file__))
     dataset_dir = os.path.join(current_dir, "dataset")
-    raw_dir = os.path.join(dataset_dir, "semantic_raw")
+#     raw_dir = os.path.join(dataset_dir, "semantic_raw")
+    raw_dir = "/content/"
 
     for file_prefix in all_file_prefixes:
         point_cloud_txt_to_pcd(raw_dir, file_prefix)
