@@ -12,7 +12,7 @@ train_file_prefixes = [
     #"domfountain_station2_xyz_intensity_rgb",
     #"domfountain_station3_xyz_intensity_rgb",
     "neugasse_station1_xyz_intensity_rgb",
-    "sg27_station1_intensity_rgb",
+#     "sg27_station1_intensity_rgb",
 #     "sg27_station2_intensity_rgb",
 ]
 
