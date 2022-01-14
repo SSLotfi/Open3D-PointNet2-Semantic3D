@@ -23,6 +23,7 @@ def prepend_line(file_name, line):
 def point_cloud_txt_to_pcd(raw_dir, file_prefix):
     # File names
     txt_file = os.path.join(raw_dir, file_prefix + ".txt")
+    print("-------------------------------------------->", raw_dir)
     pts_file = os.path.join(raw_dir, file_prefix + ".pts")
     pcd_file = os.path.join(raw_dir, file_prefix + ".pcd")
 
