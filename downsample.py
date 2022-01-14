@@ -30,13 +30,13 @@ def down_sample(
         non_zero_indexes = dense_labels != 0
 
         dense_points = np.asarray(dense_pcd.points)[non_zero_indexes]
-        dense_pcd.points = open3d.Vector3dVector()
-        dense_pcd.points = open3d.Vector3dVector(dense_points)
+        dense_pcd.points = open3d.utility.Vector3dVector()
+        dense_pcd.points = open3d.utility.Vector3dVector(dense_points)
         del dense_points
 
         dense_colors = np.asarray(dense_pcd.colors)[non_zero_indexes]
-        dense_pcd.colors = open3d.Vector3dVector()
-        dense_pcd.colors = open3d.Vector3dVector(dense_colors)
+        dense_pcd.colors = open3d.utility.Vector3dVector()
+        dense_pcd.colors = open3d.utility.Vector3dVector(dense_colors)
         del dense_colors
 
         dense_labels = dense_labels[non_zero_indexes]
