@@ -75,7 +75,8 @@ if __name__ == "__main__":
     # downsampled data: "dataset/semantic_downsampled"
     current_dir = os.path.dirname(os.path.realpath(__file__))
     dataset_dir = os.path.join(current_dir, "dataset")
-    raw_dir = os.path.join(dataset_dir, "semantic_raw")
+#     raw_dir = os.path.join(dataset_dir, "semantic_raw")
+    raw_dir = "/content/"
     downsampled_dir = os.path.join(dataset_dir, "semantic_downsampled")
 
     # Create downsampled_dir
