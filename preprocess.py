@@ -20,7 +20,7 @@ def prepend_line(file_name, line):
         f.write(line.rstrip("\r\n") + "\n" + content)
 
 
-def point_cloud_txt_to_pcd(raw_dir, file_prefix):
+def point_cloud_txt_to_pcd("/content/", file_prefix):
     # File names
     txt_file = os.path.join(raw_dir, file_prefix + ".txt")
     print("-------------------------------------------->", raw_dir)
